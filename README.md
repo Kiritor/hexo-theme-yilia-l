@@ -13,3 +13,4 @@ hexo-theme-yilia-l
 具体的效果图如下:
 ###首页
 ![首页](theme-sp1.png)
+详细的界面demo:[kiritor](http://kiritor.github.io)
