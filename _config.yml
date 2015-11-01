@@ -1,0 +1,61 @@
+# Header
+menu:
+  #设置菜单
+  #所有文章: /archives
+  #主页: /
+  #前端开发: /categories/front
+  #工作日志: /categories/work
+  #点滴生活: /categories/life
+
+subnav:
+  #二级菜单
+  github: "https://github.com/Kiritor"
+  weibo: "http://weibo.com/3206206100/profile?topnav=1&wvr=6"
+  rss: "#"
+  zhihu: "http://www.zhihu.com/people/kiritor"
+  #douban: "#"
+  #mail: "#"
+  #facebook: "#"
+  #google: "#"
+  #twitter: "#"
+  #linkedin: "#"
+
+rss: /atom.xml
+
+# Content
+excerpt_link: More
+archive_yearly: true #按年存档
+fancybox: true
+mathjax: true
+
+# Miscellaneous
+google_analytics: ''
+#站点图标
+favicon: /img/leaves.ico
+
+#你的头像url
+avatar: "http://kiritor.github.io/img/lcore.jpg"
+#是否开启分享
+baidushare: true
+#是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key
+duoshuo_shortname: kiritor
+#是否开启云标签
+tagcloud: true
+
+#是否开启友情链接
+#不开启——
+friends: false
+#开启——
+#friends:
+  #奥巴马的博客: http://localhost:4000/
+  #卡卡的美丽传说: http://localhost:4000/
+   #本泽马的博客: http://localhost:4000/
+  #吉格斯的博客: http://localhost:4000/
+  #习大大大不同: http://localhost:4000/
+  #托蒂的博客: http://localhost:4000/
+
+#是否开启“关于我”。
+#不开启——
+#aboutme: false
+#开启——
+aboutme: 乐于分享,喜欢环境音乐,爱看动漫,偶尔写写技术博客的小程一枚...
