@@ -59,27 +59,18 @@
                                             <% } %>
             </div>
             <% if (!index && theme.baidushare){ %>
-                <div class="bdsharebuttonbox" style="margin-top:10px;margin-left:30px;float:left;">
-                    <a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a>
-                    <a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a>
-                    <a title="分享到腾讯微博" href="#" class="bds_tqq" data-cmd="tqq"></a>
-                    <a title="分享到人人网" href="#" class="bds_renren" data-cmd="renren"></a>
-                    <a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a>
-                    <a href="#" class="bds_more" data-cmd="more"></a>
+                <div id="socialShare" style="margin-left:40px;">
                 </div>
                 <script>
-                    window._bd_share_config = {
-                        "common": {
-                            "bdSnsKey": {},
-                            "bdText": "",
-                            "bdMini": "1",
-                            "bdMiniList": false,
-                            "bdStyle": "2",
-                            "bdSize": "16"
-                        },
-                        "share": {}
-                    };
-                    with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+                    $(function() {
+
+                        $("#socialShare").socialShare({
+                            content: 'Nice!不错的资源...',
+                            url: window.location.href,
+                            titile: '<%post.title%>'
+                        });
+
+                    });
                 </script>
                 <% } %>
                     <% if (!index){ %>
@@ -92,7 +83,7 @@
                                     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
                                     <script type="text/javascript">
                                         var duoshuoQuery = {
-                                            short_name: "kiritor"
+                                            short_name: "<%=theme.duoshuo_shortname%>"
                                         };
                                         (function() {
                                             var ds = document.createElement('script');

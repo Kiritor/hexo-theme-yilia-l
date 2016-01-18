@@ -39,11 +39,11 @@
         padding-left: 48px !important;
     }
 </style>
-<ul class="ds-recent-comments" data-num-items="1" data-show-avatars="1" data-show-time="0" data-show-admin="0" data-excerpt-length="70" style="height:70px;width:240px;position:fixed;top:80px;right:140px;z-index:9999;"></ul>
+<ul class="ds-recent-comments" id="ds-recent-comments" data-num-items="1" data-show-avatars="1" data-show-time="0" data-show-admin="0" data-excerpt-length="70" style="height:70px;width:240px;position:fixed;top:80px;right:140px;z-index:9999;"></ul>
 <!--多说js加载开始，一个页面只需要加载一次 -->
 <script type="text/javascript">
     var duoshuoQuery = {
-        short_name: "kiritor"
+        short_name: "<%=theme.duoshuo_shortname%>"
     };
     (function() {
         var ds = document.createElement('script');

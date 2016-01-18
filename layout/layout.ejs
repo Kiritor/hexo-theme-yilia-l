@@ -7,7 +7,10 @@
     </div>
     <div class="mid-col">
       <%- partial('_partial/mobile-nav', null, {cache: !config.relative_link}) %>
+	  <!--是否开启最近通知-->
+	  <% if(theme.recent){%>
 	  <%- partial('_partial/recent',null,{cache: !config.relative_link}) %>
+	  <% } %>
       <div class="body-wrap"><%- body %></div>
       <!--<%- partial('_partial/footer') %>-->
     </div>
