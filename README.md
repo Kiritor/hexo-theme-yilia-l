@@ -7,6 +7,19 @@ hexo-theme-yilia-l
 >    3. 文章目录(只在文章显示:文章类型为post,不需要目录指定文章类型为post-noTOC)
 >    4. 多说最新评论(只在首页显示)
 
+##使用
+###安装
+```bash
+$ git clone https://github.com/Kiritor/hexo-theme-yilia-l.git themes/yilia-l
+```
+###配置
+修改修改hexo根目录下的 _config.yml ： theme: yilia-l
+###更新
+```bash
+cd themes/yilia-l
+git pull
+```
+
 ##最近修改
 精简了代码,修改了文章目录显示鼠标移动样式混乱的问题,降低了代码耦合度,将配置信息剥离到主题配置文件_config.yml中,在yalia主题上新增的配置项如下:
 ```bash
