@@ -8,7 +8,7 @@
     function init(target, options) {
         var settings = $.extend({}, $.fn.socialShare.defaults, options);
         //初始化各个组件
-        var $msb_main = "<a class='msb_main'><img title='分享' src='/img/share_core_square.jpg'></a>";
+        var $msb_main = "<a class='msb_main'><img title='分享' src='http://kiritor.github.io/img/share_core_square.jpg'></a>";
         var $social_group = "<div class='social_group'>" + "<a target='_blank' class='msb_network_button sina'>sina</a>" + "<a target='_blank' class='msb_network_button tQQ'>tQQ</a>" + "<a target='_blank' class='msb_network_button qZone'>qZone</a>" + "<a target='_blank' class='msb_network_button douban'>douban</a>" + "<a target='_blank' class='msb_network_button weixin'>weixin</a>" + "</div>";
 
         var $wemcn = "<div id='wemcn' class='wemcn'>" + "<div id='ewmDiv' class='ewmDiv'>" + "</div>"
