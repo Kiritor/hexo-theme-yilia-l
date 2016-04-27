@@ -5,6 +5,10 @@
 <script>
     $(function(){
 
+        var width = document.body.scrollWidth;
+        if (width <=550) {
+             $(".toc-button").css("display","none");
+        }
         $(".toc-button").hover(function(){
             var top = $(this).get(0).offsetTop-$(".toc-article").height()/2;
             $(".toc-article").css({
