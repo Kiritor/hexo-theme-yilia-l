@@ -1,4 +1,24 @@
-<div id="toc" class="toc-article">
-    <div class="toc-title">目录</div>
+<p class="toc-button">目录</p>
+<div id="toc" class="toc-article" style="display:none;">
     <%- toc(post.content, {list_number: true}) %>
 </div>
+<script>
+    $(function(){
+
+        $(".toc-button").hover(function(){
+            var top = $(this).get(0).offsetTop-$(".toc-article").height()/2;
+            $(".toc-article").css({
+                top:top +"px"
+            });
+            $("#toc").show(1000,function(){});
+           // $("#toc").animate({width:500;},3000);
+        },function(){
+
+        });
+        $(".toc-article").hover(function(){
+
+        },function(){
+            $("#toc").hide(1000,function(){});
+        });
+    })
+</script>

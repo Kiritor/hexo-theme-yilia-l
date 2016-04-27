@@ -1,11 +1,33 @@
- .toc-article {
-        background: #fff;
+    .toc-button {
+        position:fixed;
+        top:40%;
+        right:10px;
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
+        height: 30px;
+        background-color:#C3C3FF;
+        width: 30px;
+        text-align:right;
+        padding-right:6px;
+        line-height:30px;
+        color:#ffffff;
+        font-size:12px;
+        font-family:'Micosoft YaHei';
+        z-index: 2;
+        cursor:pointer;
+    }
+
+    .toc-article {
+        background: rgba(0, 0, 0, 0.1) none repeat scroll 0 0;
         padding: 1em;
-		border:1px solid #eee;
-        position: relative;
-        left: 1em;
+		/*border:1px solid #eee;*/
+        position: fixed;
+        top:24%;
+        right:60px;
+        width:100px;
 		font-size:14px;
 		color:#000000;
+
     }
     .toc-article .toc-title {
         padding-bottom: 0.4em;
@@ -23,7 +45,7 @@
         float: right;
 		z-index:9999;
 		min-width:200px;
-		right:80px;
+
     }
     #toc .toc {
         padding: 0
@@ -36,7 +58,7 @@
 		vertical-align:middle;
     }
 	.toc li a:hover {
-	    background-color:#f8f6f6;
+	    /*background-color:#fac22b;*/
 	}
     #toc ol {
         margin: 0;
@@ -46,4 +68,7 @@
     }
 	#toc .toc-text {
 	    color:#4CA0E4;
+	}
+    #toc .toc-text:hover {
+	    color:#fac22b;
 	}
