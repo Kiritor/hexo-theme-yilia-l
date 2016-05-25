@@ -34,7 +34,7 @@
                                         <div class="article-entry" itemprop="articleBody">
                                             <% if (post.excerpt && index){ %>
 
-                                                <% } else { if (post.toc !==false&&post.layout!="post-noTOC" ) {%>
+                                                <% } else { if (post.toc !==false&&(post.layout!="post-noTOC"&&post.layout!=false)) {%>
                                                     <!--02-->
                                                     <%- partial( 'post/toc') %>
                                                         <% } %>
