@@ -1,0 +1,36 @@
+layout: false
+categories: front
+date: 2016-05-30 20:03:48
+---
+<html>
+<head>
+<meta charset="UTF-8" />
+<style>
+    .gallery {
+        box-shadow:inset 0 0 2px 2px #ccc;
+    }
+</style>
+</head>
+<body>
+
+    <h1>测试相册</h1>
+
+    <div id="gallery" style="display: none;box-shadow:inset 0 0 2px 2px #ccc;">
+
+        <img alt="满城尽带黄金甲" src="img/images/thumbs/thumb1.jpg" data-image="http://kiritor.github.io/img/tour/%E4%BB%99%E5%A5%B3%E5%B1%B1/IMG_20150425_135319.jpg" data-description="满城尽带黄金甲">
+
+        <img alt="Preview Image 1" src="img/images/thumbs/thumb1.jpg" data-image="/img/images/big/image1.jpg" data-description="Preview Image 1 Description">
+
+
+    </div>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+
+            jQuery("#gallery").unitegallery();
+
+        });
+    </script>
+</body>
+
+</html>
