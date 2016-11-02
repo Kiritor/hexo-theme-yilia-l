@@ -129,12 +129,12 @@
         //window.open(replaceAPI(weixin, $.extend({}, $.fn.socialShare.defaults, options)));
         $("#ewmDiv").empty();
         $("#ewmDiv").qrcode({
-            width: 48,
-            height: 48,
+            width: 60,
+            height: 60,
             text: window.location.href
         });
         $("#wemcn").css({
-            marginLeft: ($(".msb_network_button.weixin").offset().left - 300 + 40)+ "px"
+            marginLeft: ($(".msb_network_button.weixin").offset().left - 320 + 40)+ "px"
         });
 		$("#wemcn").fadeToggle(1000);
     }

@@ -1,0 +1,174 @@
+@import "nib"
+@import "_variables"
+@import "_util/mixin"
+@import "_util/grid"
+
+@font-face {
+  font-family:'FontAwesome';
+  src:url("fonts/fontawesome-webfont.eot");
+  src:url("fonts/fontawesome-webfont.eot?#iefix") format("embedded-opentype"),url("fonts/fontawesome-webfont.woff") format("woff"),url("fonts/fontawesome-webfont.ttf") format("truetype"),url("fonts/fontawesome-webfont.svgz#FontAwesomeRegular") format("svg"),url("fonts/fontawesome-webfont.svg#FontAwesomeRegular") format("svg");
+  font-weight:normal;
+  font-style:normal
+}
+
+@font-face {
+    font-family: 'alluraregular';
+    src: url('fonts/allura-regular.eot');
+    src: url('fonts/allura-regular.eot?#iefix') format('embedded-opentype'),
+         url('fonts/allura-regular.woff2') format('woff2'),
+         url('fonts/allura-regular.woff') format('woff'),
+         url('fonts/allura-regular.ttf') format('truetype'),
+         url('fonts/allura-regular.svg#alluraregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+global-reset()
+
+ol{
+  list-style: decimal;
+  padding-left: 20px;
+}
+ul{
+  list-style: none;
+}
+input, button
+  margin: 0
+  padding: 0
+  &::-moz-focus-inner
+    border: 0
+    padding: 0
+
+@font-face
+  font-family: FontAwesome
+  font-style: normal
+  font-weight: normal
+  src: url(font-icon-path + ".eot?v=#" + font-icon-version)
+  src: url(font-icon-path + ".eot?#iefix&v=#" + font-icon-version) format("embedded-opentype"),
+       url(font-icon-path + ".woff?v=#" + font-icon-version) format("woff"),
+       url(font-icon-path + ".ttf?v=#" + font-icon-version) format("truetype"),
+       url(font-icon-path + ".svg#fontawesomeregular?v=#" + font-icon-version) format("svg")
+
+html, body, #container
+  height: 100%
+
+body
+  font-family:"HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight:300;
+  font-size:14px;
+  background:#fff;
+  color:#666
+  -webkit-overflow-scrolling: touch
+
+h1,h2,h3{
+  display: block;
+}
+h1 {
+  font-size:1.5em
+}
+h2 {
+  font-size:1.3em
+}
+h3 {
+  font-size:1.1em
+}
+h4,h5,h6{
+  font-size:1em
+}
+
+a {
+  text-decoration:none;
+  outline-width:0;
+  color:#258fb8;
+  outline: none;
+}
+
+.alignleft {
+  float:left
+}
+.alignright {
+  float:right
+}
+.clearfix {
+  *zoom:1
+}
+.clearfix:after {
+  content:"";
+  display:table;
+  clear:both
+}
+.inner {
+  width:1000px;
+  margin:0 auto
+}
+.hide{
+  display: none;
+}
+@media screen and (max-width:1040px) {
+  .inner {
+    width:100%
+  }
+}
+.color {
+    color: #11a8bc;
+}
+.label {
+    background-color:#ddd;
+	padding:auto 5px auto 5px;
+	display:inline;
+}
+
+.resume {
+
+    
+    font-family: "微软雅黑";
+    font-size: 12px;
+    margin: 4px 10px 10px;
+   
+}
+
+.ck-prev{
+    border-radius: 0;
+    height: 140px;
+    opacity: 0.5;
+    position: absolute;
+    text-indent: -9999px;
+    transition: opacity 0.2s linear 0s;
+    width: 40px;
+    z-index: 2;
+}
+.ck-prev {
+    background: #ffffff url("../img/arrow-left.png") no-repeat scroll 50% center;
+    left: 4px;
+}
+.ck-prev:hover {
+    background: #F5F5F5 url("../img/arrow-left.png") no-repeat scroll 50% center;;
+}
+
+#centerwell { position: relative; height: 140px;line-height:140px; margin: 0; padding: 0; overflow: hidden; background-color:#fff;}
+#centerwell li { position: relative; width: 140px; height: 140px; float: left; border-right: #f5f5f5 0px solid; background: white; overflow: hidden;  }
+#centerwell h3 { position: absolute; top: 0; left: 0; margin: 0; text-indent: -9999px; width: 140px; height: 140px; cursor: pointer;}
+#centerwell div { position:absolute; left:155px; top:0;height:140px; width: auto; color: #5f5f5f; font-size: 15px; line-height:30px;font-family: GeogrotesqueMedium, Helvetica, Arial, sans-serif; letter-spacing: 0pt;}
+#centerwell div label{
+   margin-right:10px;
+   padding: auto 5px auto 5px;
+   display:inline-block;
+}
+#aboutMe h3 { background: url(../img/behance_btn.png) no-repeat white; }
+#work h3 { background: url(../img/work.png) no-repeat white; }
+@import "_extend"
+@import "_partial/main"
+@import "_partial/archive"
+@import "_partial/article"
+@import "_partial/archive"
+@import "_partial/highlight"
+@import "_partial/footer"
+@import "_partial/share"
+@import "_partial/page"
+@import "_partial/instagram"
+@import "_partial/tagcloud"
+@import "_partial/scroll"
+@import "_partial/mobile-slider"
+
+if sidebar
+  @import "_partial/sidebar"

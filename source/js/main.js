@@ -101,7 +101,7 @@ var Main = (function(){
 		if(isFancy.length != 0){
 			var imgArr = $(".article-inner img");
 			for(var i=0,len=imgArr.length;i<len;i++){
-                if($(imgArr[i]).parents("#gallery").length==1){
+                if($(imgArr[i]).parents(".gallery").length>=1){
 
                     break;
                 }

@@ -1,0 +1,6 @@
+<!-- 是否开启微简历 -->
+<% var resume = true %>
+<% if(resume) {%>
+      <%- partial('_partial/resume', null, {cache: !config.relative_link}) %>
+<% } %>
+<%- partial('_partial/archive', {pagination: 2, index: true}) %>

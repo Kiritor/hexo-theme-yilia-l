@@ -31,20 +31,25 @@
                                 </div>
                                 <% } %>
                                     <% } %>
+
                                         <div class="article-entry" itemprop="articleBody">
+                                           <!--
                                             <% if (post.excerpt && index){ %>
 
-                                                <% } else { if (post.toc !==false&&(post.layout!="post-noTOC"&&post.layout!=false)) {%>
-                                                    <!--02-->
+                                            <% } else{
+	                                             if (post.toc !==false&&(post.layout!="post-noTOC" &&post.layout!="false" )) {%>
+
                                                     <%- partial( 'post/toc') %>
-                                                        <% } %>
-                                                            <% } %>
-                                                                <% if (post.excerpt && index){ %>
-                                                                    <%- post.excerpt %>
-                                                                        <% } else { %>
-                                                                            <%- post.content %>
-                                                                                <% } %>
+                                                  <% } %>
+                                            <% } %>
+                                            -->
+                                            <% if (post.excerpt && index){ %>
+                                                     <%- post.excerpt %>
+                                            <% } else { %>
+                                                     <%- post.content %>
+                                            <% } %>
                                         </div>
+
                                         <% if (index){ %>
                                             <div class="article-info article-info-index">
                                                 <%- partial( 'post/tag') %>
