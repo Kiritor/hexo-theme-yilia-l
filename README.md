@@ -36,5 +36,5 @@ recentContent: 最近研究shiro中......
 resume: true
 ```
 ## 首页
-<center>![首页](theme-sp1.png)</center>
-详细界面参考:[我的博客](http://kiritor.github.io/)
+![首页](https://github.com/Kiritor/hexo-theme-yilia-l/blob/master/theme-sp1.png)
+详细界面参考:![我的博客](http://kiritor.github.io)
