@@ -37,4 +37,4 @@ resume: true
 ```
 ## 首页
 ![首页](https://github.com/Kiritor/hexo-theme-yilia-l/blob/master/theme-sp1.png)
-详细界面参考:![我的博客](http://kiritor.github.io)
+详细界面参考:[我的博客](http://kiritor.github.io)
