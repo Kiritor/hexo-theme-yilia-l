@@ -1,7 +1,8 @@
 # Header
 menu:
   #主页: /archives
-  主页: /
+  关于我: /resume
+  #主页: /
   前端开发: /categories/front
   工作日志: /categories/work
   点滴生活: /categories/life
@@ -9,7 +10,7 @@ menu:
 subnav:
   github: "https://github.com/Kiritor"
   weibo: "http://weibo.com/3206206100/profile?topnav=1&wvr=6"
-  rss: "#"
+  rss: "/atom.xml"
   zhihu: "http://www.zhihu.com/people/kiritor"
   #douban: "#"
   #mail: "#"
@@ -24,7 +25,7 @@ rss: /atom.xml
 excerpt_link: More
 archive_yearly: true #按年存档
 fancybox: true
-mathjax: true
+mathjax: false
 
 # Miscellaneous
 google_analytics: ''
@@ -40,11 +41,14 @@ tagcloud: true
 #是否开启多说
 duoshuo_shortname: kiritor
 #是否开启多说最近评论:悬浮于首页
-recentComment: true
+recentComment: false
+
+#是否开启目录
+toc: true
 
 #是否开启最近通知
 recent: true
-recentContent: 最近研究shiro中......
+recentContent: 开启评论...
 
 #是否开启微简历
 resume: true

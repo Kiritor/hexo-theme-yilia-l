@@ -1,0 +1,40 @@
+<span class="local-search local-search-google local-search-plugin" style="<%- wrapStyle %>">
+  <input type="search" placeholder="Search..." id="local-search-input" class="local-search-input-cls" style="<%- inputStyle %>">
+  <!--<i class="icon" aria-hidden="true" title="Search"></i>-->
+  <div id="local-search-result" class="local-search-result-cls"></div>
+</span>
+
+<script>
+
+
+
+
+    var isMobile = {
+        Android: function() {
+            return navigator.userAgent.match(/Android/i);
+        },
+        BlackBerry: function() {
+            return navigator.userAgent.match(/BlackBerry/i);
+        },
+        iOS: function() {
+            return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+        },
+        Opera: function() {
+            return navigator.userAgent.match(/Opera Mini/i);
+        },
+        Windows: function() {
+            return navigator.userAgent.match(/IEMobile/i);
+        },
+        any: function() {
+            return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+        }
+    };
+	if(isMobile.any()){
+	    //手机端取消搜索功能
+		$('.local-search').css("display","none");
+	}
+
+    if ($('.local-search').size() && !isMobile.any()) {
+        searchFunc("/search.xml", 'local-search-input', 'local-search-result');
+    }
+</script>

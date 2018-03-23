@@ -33,21 +33,33 @@
                                     <% } %>
 
                                         <div class="article-entry" itemprop="articleBody">
-                                           <!--
+
                                             <% if (post.excerpt && index){ %>
 
                                             <% } else{
-	                                             if (post.toc !==false&&(post.layout!="post-noTOC" &&post.layout!="false" )) {%>
+	                                             if (theme.toc !==false&&(post.layout!="post-noTOC" &&post.layout!="false" )) {%>
 
                                                     <%- partial( 'post/toc') %>
                                                   <% } %>
                                             <% } %>
-                                            -->
+
                                             <% if (post.excerpt && index){ %>
-                                                     <%- post.excerpt %>
-                                            <% } else { %>
-                                                     <%- post.content %>
-                                            <% } %>
+                                                <%- post.excerpt %>
+                                                    <% } else { %>
+                                                        <%- post.content %>
+                                                            </br>
+                                                            <p>本文链接：
+                                                                <a href="<%- post.permalink  %>">
+                                                                    <%- post.permalink %>
+                                                                </a>
+                                                            </p>
+                                                            <p>-- <acronym title="End of File">EOF</acronym> --</p>
+
+                                                            <div class="post-info">
+
+                                                                <p>转载请注明出处 署名-非商业性使用-禁止演绎 3.0 国际（CC BY-NC-ND 3.0）</p>
+                                                            </div>
+                                                            <% } %>
                                         </div>
 
                                         <% if (index){ %>
@@ -80,14 +92,67 @@
                     });
                 </script>
                 <% } %>
-                    <% if (!index){ %>
-                        <%- partial( 'post/nav') %>
-                            <% } %>
-                                <!-- 多说评论框 start -->
-                                <% if (!index){ %>
+                    <% if(!index){ %>
+                        <div class="donateContainer">
+                            <div>如果文章对您有用请随意打赏，谢谢支持！</div>
+                            <span id="donate" class="donate" onclick="donate()">打赏</span>
+                            <div id="QR" style="display: none;">
+
+                                <div id="alipay" style="display: inline-block">
+                                    <a href="http://kiritor.github.io/img/weixin.jpg" class="fancybox fancybox.image" rel="group">
+                                        <img id="alipay_qr" src="http://kiritor.github.io/img/weixin.JPG">
+                                    </a>
+
+                                </div>
+
+                                <div id="wechat" style="display: inline-block">
+                                    <a href="http://kiritor.github.io/img/zhifubao.jpg" class="fancybox fancybox.image" rel="group">
+                                        <img id="wechat_qr" src="http://kiritor.github.io/img/zhifubao.JPG">
+                                    </a>
+
+                                </div>
+
+
+
+
+                            </div>
+                            <script>
+                                function donate() {
+                                    var qr = document.getElementById('QR');
+                                    if (qr.style.display === 'none') {
+                                        qr.style.display = 'block';
+                                    } else {
+                                        qr.style.display = 'none'
+                                    }
+
+                                };
+                            </script>
+                        </div>
+                        <% } %>
+                            <% if (!index){ %>
+                                <%- partial( 'post/nav') %>
+                                    <% } %>
+                                        <!-- 多说评论框 start -->
+                                        <% if (!index){ %>
+                                            <div style="padding-left:30px;padding-right:30px;">
+                                                <div id="github-comment"></div>
+                                                <script>
+                                                    var gitment = new Gitment({
+                                                        id: location.href, // 可选。默认为 location.href
+                                                        owner: 'Kiritor',
+                                                        repo: 'comment',
+                                                        oauth: {
+                                                            client_id: 'c245701828e9d9a33ae1',
+                                                            client_secret: '8b81ccff087981c193f23867f1ab1964800704ea',
+                                                        },
+                                                    })
+                                                     gitment.render('github-comment')
+													 $(".gitment-editor-footer-tip").css("display","none");
+                                                </script>
+                                            </div>
+                                            <!--
                                     <div class="ds-thread" data-thread-key="<%= post.layout %>-<%= post.slug %>" data-title="<%= post.title %>" data-url="<%= page.permalink %>"></div>
-                                    <!-- 多说评论框 end -->
-                                    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+
                                     <script type="text/javascript">
                                         var duoshuoQuery = {
                                             short_name: "<%=theme.duoshuo_shortname%>"
@@ -101,8 +166,9 @@
                                             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
                                         })();
                                     </script>
-                                    <!-- 多说公共JS代码 end -->
-                                    <% } %>
+                                    -->
+                                            <!-- 多说公共JS代码 end -->
+                                            <% } %>
 </article>
 
 <!--

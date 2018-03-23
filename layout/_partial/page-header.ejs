@@ -1,0 +1,7 @@
+<div class="page-header">
+	<%- partial('_partial/post/search', {wrapStyle: 'float:right;', inputStyle: ''}) %>
+	<!--是否开启最近通知-->
+	<% if(theme.recent){%>
+	<%- partial('_partial/recent',null,{cache: !config.relative_link}) %>
+	<% } %>
+</div>

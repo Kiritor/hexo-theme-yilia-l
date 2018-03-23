@@ -1,0 +1,119 @@
+// 记得在 style.stylus 中引入进去
+
+.local-search {
+  position: relative;
+  text-align: left;
+  display: line-block;
+}
+
+.local-search-input-cls {
+  width: 200px;
+  padding: 6px 12px;
+  border-radius: 0;
+  border: 0;
+  border-bottom: 2px solid #5ad1ed;
+  font-size: 12px;
+}
+
+#local-search-close {
+  content: 'x';
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: #fff;
+  color: #888;
+  border-radius: 100%;
+  line-height: 20px;
+  text-align: center;
+  font-size: 12px;
+  font-family: consolas;
+  border: 1px solid #CCC;
+  display: block;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  font-style: normal;
+  font-weight: normal;
+  transform: rotateZ(0);
+  transition: all 0.3s;
+  &:hover {
+    border-color: #666;
+    color: #222;
+    transform: rotateZ(180deg);
+    transition: all 0.3s;
+  }
+}
+
+.local-search-result-cls {
+  position: absolute;
+  z-index: 99;
+  width: 620px;
+  top: 34px;
+  right: 0;
+  .local-search-empty {
+    color: #555;
+    line-height: 44px;
+    text-align: center;
+    display: block;
+    font-size: 14px;
+    font-weight: normal;
+  }
+  ul {
+    width: 580px;
+    max-height: 460px;
+    min-height: 0;
+    height: auto;
+    overflow-y: auto;
+    border: 1px solid #eee;
+	
+    padding: 10px 20px;
+    background: #FFF;
+    box-shadow: 1px 2px 4px #CCC;
+    li {
+      text-align: left;
+      border-bottom: 1px solid #CCC;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+      line-height: 30px;
+      font-weight: normal;
+      &:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+      }
+      a {
+        margin-top: 20px;
+        font-size: 14px;
+      }
+      p {
+        margin-top: 0;
+        font-size: 12px;
+        max-height: 124px;
+        overflow: hidden;
+      }
+      em.search-keyword {
+        color: #e58c7c;
+      }
+    }
+  }
+}
+
+.local-search-plugin {
+  .local-search-input-cls {
+    opacity: 0.6;
+    width: 160px;
+    transition: all 0.3s;
+    &:hover {
+      opacity: 1;
+      width: 200px;
+      transition: all 0.3s;
+    }
+  }
+  .icon {
+    position: relative;
+    background: url(../img/search.png);
+	left: -30px;
+	width:20px;
+	height:20px;
+    cursor: pointer;
+  }
+}

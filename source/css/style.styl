@@ -118,14 +118,15 @@ a {
 	display:inline;
 }
 
-.recent {
+.page-header {
   position: relative;
   border: 1px solid #fff;
-  margin: 4px 10px 10px 10px;
+  margin: 4px 10px 4px 10px;
   background: #fff;
   -webkit-transition: all 0.2s ease-in;
-  text-align: right;
-  padding: 8px 20px 8px 10px;
+  height:30px;
+  line-height: 30px;
+  padding-left: 10px;
   font-size: 12px;
   font-family: '微软雅黑';
 }
@@ -190,6 +191,8 @@ a {
 @import "_partial/toc"
 @import "_partial/ug-theme-default.styl"
 @import "_partial/unite-gallery.styl"
-
+@import "_partial/donate.styl"
+@import "_partial/search.styl"
+@import "_partial/gitment.styl"
 if sidebar
   @import "_partial/sidebar"
