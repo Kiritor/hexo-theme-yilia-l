@@ -2,12 +2,13 @@
 <% if(theme.resume) {%>
       <%- partial('_partial/resume', null, {cache: !config.relative_link}) %>
 <% } %>
+<!--
 <% if(theme.recentComment) {%>
      <div id="recentComments">
         <%- partial('_partial/ds-recent-comments', null, {cache: !config.relative_link}) %>
      </div>
 <% } %>
-
+-->
 <%- partial('_partial/archive', {pagination: 2, index: true}) %>
 
 <script>

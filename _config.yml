@@ -29,29 +29,37 @@ mathjax: false
 
 # Miscellaneous
 google_analytics: ''
-favicon: /img/leaves.ico
+favicon: /img/favicon.ico
 
 #你的头像url
 avatar: "http://kiritor.github.io/img/lcore.jpg"
+
 #是否开启分享
-baidushare: true
+socialShare: true
+
 #是否开启云标签
 tagcloud: true
 
-#是否开启多说
-duoshuo_shortname: kiritor
-#是否开启多说最近评论:悬浮于首页
-recentComment: false
+#是否开启评论
+valine: true
+#是否开启多说最近评论:悬浮于首页(目前弃用多说)
+#recentComment: false
+
+#是否开启捐赠
+donate: true
+
+#是否开启站内搜索
+search: true
 
 #是否开启目录
 toc: true
 
 #是否开启最近通知
 recent: true
-recentContent: 开启评论...
+recentContent: 最近打算回归学习,记录一点东西,慢慢找回写博客的习惯...
 
 #是否开启微简历
-resume: true
+resume: false
 
 #是否开启友情链接
 #不开启——

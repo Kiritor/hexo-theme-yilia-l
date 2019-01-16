@@ -1,5 +1,8 @@
-<div class="page-header">
+<div class="page-header" style="">
+	<!--是否开启站内搜索-->
+	<% if(theme.search){%>
 	<%- partial('_partial/post/search', {wrapStyle: 'float:right;', inputStyle: ''}) %>
+	<% } %>
 	<!--是否开启最近通知-->
 	<% if(theme.recent){%>
 	<%- partial('_partial/recent',null,{cache: !config.relative_link}) %>

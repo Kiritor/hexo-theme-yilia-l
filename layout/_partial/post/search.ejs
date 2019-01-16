@@ -5,10 +5,6 @@
 </span>
 
 <script>
-
-
-
-
     var isMobile = {
         Android: function() {
             return navigator.userAgent.match(/Android/i);
@@ -29,12 +25,21 @@
             return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
         }
     };
+	
+	
 	if(isMobile.any()){
 	    //手机端取消搜索功能
 		$('.local-search').css("display","none");
 	}
-
+	
+	$(".local-search").on('input porpertychange',function(){
+		
+		//searchFunc("/search.xml", 'local-search-input', 'local-search-result');
+		
+	});
+    
     if ($('.local-search').size() && !isMobile.any()) {
         searchFunc("/search.xml", 'local-search-input', 'local-search-result');
     }
+	
 </script>

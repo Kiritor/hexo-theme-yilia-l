@@ -11,219 +11,118 @@
         });
     </script>
     <%if(post.noDate !="true" ){%>
-        <div class="article-meta">
-            <%- partial( 'post/date', {class_name: 'article-date', date_format: null}) %>
+    <div class="article-meta">
+        <%- partial( 'post/date', {class_name: 'article-date', date_format: null}) %>
+    </div>
+    <%}%>
+    <div class="article-inner">
+        <% if (theme.fancybox){ %>
+        <input type="hidden" class="isFancy" />
+        <% } %>
+        <% if (post.link || post.title){ %>
+        <header class="article-header">
+            <%- partial( 'post/title', {class_name: 'article-title'}) %>
+        </header>
+        <% if (!index){ %>
+        <div class="article-info article-info-post">
+            <%- partial( 'post/tag') %>
+            <%- partial( 'post/category') %>
+            <div class="clearfix"></div>
         </div>
-        <%}%>
-            <div class="article-inner">
-                <% if (theme.fancybox){ %>
-                    <input type="hidden" class="isFancy" />
-                    <% } %>
-                        <% if (post.link || post.title){ %>
-                            <header class="article-header">
-                                <%- partial( 'post/title', {class_name: 'article-title'}) %>
-                            </header>
-                            <% if (!index){ %>
-                                <div class="article-info article-info-post">
-                                    <%- partial( 'post/tag') %>
-                                        <%- partial( 'post/category') %>
-                                            <div class="clearfix"></div>
-                                </div>
-                                <% } %>
-                                    <% } %>
+        <% } %>
+        <% } %>
 
-                                        <div class="article-entry" itemprop="articleBody">
+        <div class="article-entry" itemprop="articleBody">
 
-                                            <% if (post.excerpt && index){ %>
+            <% if (post.excerpt && index){ %>
 
-                                            <% } else{
+            <% } else{
 	                                             if (theme.toc !==false&&(post.layout!="post-noTOC" &&post.layout!="false" )) {%>
 
-                                                    <%- partial( 'post/toc') %>
-                                                  <% } %>
-                                            <% } %>
+            <%- partial( 'post/toc') %>
+            <% } %>
+            <% } %>
 
-                                            <% if (post.excerpt && index){ %>
-                                                <%- post.excerpt %>
-                                                    <% } else { %>
-                                                        <%- post.content %>
-                                                            </br>
-                                                            <p>本文链接：
-                                                                <a href="<%- post.permalink  %>">
-                                                                    <%- post.permalink %>
-                                                                </a>
-                                                            </p>
-                                                            <p>-- <acronym title="End of File">EOF</acronym> --</p>
+            <% if (post.excerpt && index){ %>
+            <%- post.excerpt %>
+            <% } else { %>
+            <%- post.content %>
+            </br>
+            <p>本文链接：
+                <a href="<%- post.permalink  %>">
+                    <%- post.permalink %>
+                </a>
+            </p>
+            <p>-- <acronym title="End of File">EOF</acronym> --</p>
 
-                                                            <div class="post-info">
+            <div class="post-info">
 
-                                                                <p>转载请注明出处 署名-非商业性使用-禁止演绎 3.0 国际（CC BY-NC-ND 3.0）</p>
-                                                            </div>
-                                                            <% } %>
-                                        </div>
-
-                                        <% if (index){ %>
-                                            <div class="article-info article-info-index">
-                                                <%- partial( 'post/tag') %>
-                                                    <%- partial( 'post/category') %>
-                                                        <% if (post.excerpt && index){ %>
-                                                            <p class="article-more-link">
-                                                                <a <% if (!theme.excerpt_link){ %>class="hidden"<% } %> href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %> >></a>
-                                                            </p>
-                                                            <% } %>
-                                                                <div class="clearfix"></div>
-                                            </div>
-                                            <% } %>
+                <p>转载请注明出处 署名-非商业性使用-禁止演绎 3.0 国际（CC BY-NC-ND 3.0）</p>
             </div>
-            <% if (!index && theme.baidushare){ %>
-                <div id="socialShare" style="margin-left:40px;display:none;">
-                </div>
-                <script>
-                    $(function() {
-                        var width = document.body.scrollWidth;
-                        if (width > 550) {
-                            $("#socialShare").css("display", "block");
-                            $("#socialShare").socialShare({
-                                content: 'Nice!不错的资源...',
-                                url: window.location.href,
-                                titile: '<%post.title%>'
-                            });
-                        }
-                    });
-                </script>
-                <% } %>
-                    <% if(!index){ %>
-                        <div class="donateContainer">
-                            <div>如果文章对您有用请随意打赏，谢谢支持！</div>
-                            <span id="donate" class="donate" onclick="donate()">打赏</span>
-                            <div id="QR" style="display: none;">
+            <% } %>
+        </div>
 
-                                <div id="alipay" style="display: inline-block">
-                                    <a href="http://kiritor.github.io/img/weixin.jpg" class="fancybox fancybox.image" rel="group">
-                                        <img id="alipay_qr" src="http://kiritor.github.io/img/weixin.JPG">
-                                    </a>
+        <% if (index){ %>
+        <div class="article-info article-info-index">
+            <%- partial( 'post/tag') %>
+            <%- partial( 'post/category') %>
+            <% if (post.excerpt && index){ %>
+            <p class="article-more-link">
+                <a <% if (!theme.excerpt_link){ %>class="hidden"
+                    <% } %> href="
+                    <%- url_for(post.path) %>#more">
+                    <%= theme.excerpt_link %> >></a>
+            </p>
+            <% } %>
+            <div class="clearfix"></div>
+        </div>
+        <% } %>
+    </div>
+    <% if (!index && theme.socialShare){ %>
+        <%- partial( 'post/socialShare') %>
+    <% } %>
+    <% if(!index && theme.donate){ %>
+        <% if (post.donate!==false){ %>
+            <%- partial( 'post/donate') %>
+        <% } %>
+    <% } %>
+    <% if (!index){ %>
+        <%- partial( 'post/nav') %>
+        <% if (theme.valine){ %>
+            <% if (post.comment!==false){ %>
+                <%- partial( 'post/valine') %>
+            <% } %>
+        <% } %>
+    <% } %>
 
-                                </div>
-
-                                <div id="wechat" style="display: inline-block">
-                                    <a href="http://kiritor.github.io/img/zhifubao.jpg" class="fancybox fancybox.image" rel="group">
-                                        <img id="wechat_qr" src="http://kiritor.github.io/img/zhifubao.JPG">
-                                    </a>
-
-                                </div>
-
-
-
-
-                            </div>
-                            <script>
-                                function donate() {
-                                    var qr = document.getElementById('QR');
-                                    if (qr.style.display === 'none') {
-                                        qr.style.display = 'block';
-                                    } else {
-                                        qr.style.display = 'none'
-                                    }
-
-                                };
-                            </script>
-                        </div>
-                        <% } %>
-                            <% if (!index){ %>
-                                <%- partial( 'post/nav') %>
-                                    <% } %>
-                                        <!-- 多说评论框 start -->
-                                        <% if (!index){ %>
-                                            <div id="commentDiv" style="padding-left:30px;padding-right:30px;">
-                                                <div id="github-comment"></div>
-                                                <script>
-                                                    var gitment = new Gitment({
-                                                        id: location.href, // 可选。默认为 location.href
-                                                        owner: 'Kiritor',
-                                                        repo: 'comment',
-                                                        oauth: {
-                                                            client_id: 'c245701828e9d9a33ae1',
-                                                            client_secret: '8b81ccff087981c193f23867f1ab1964800704ea',
-                                                        },
-                                                    })
-                                                     gitment.render('github-comment')
-													 $(".gitment-editor-footer-tip").css("display","none");
-                                                </script>
-                                            </div>
-                                            <!--
-                                    <div class="ds-thread" data-thread-key="<%= post.layout %>-<%= post.slug %>" data-title="<%= post.title %>" data-url="<%= page.permalink %>"></div>
-
-                                    <script type="text/javascript">
-                                        var duoshuoQuery = {
-                                            short_name: "<%=theme.duoshuo_shortname%>"
-                                        };
-                                        (function() {
-                                            var ds = document.createElement('script');
-                                            ds.type = 'text/javascript';
-                                            ds.async = true;
-                                            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-                                            ds.charset = 'UTF-8';
-                                            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-                                        })();
-                                    </script>
-                                    -->
-                                            <!-- 多说公共JS代码 end -->
-                                            <% } %>
 </article>
 
-<!--
-<% if(!index) {%>
-    <div style="width:100%;background-color:#fff;">
-        <div id="uyan_frame" style="margin:auto 10px 10px 10px;"></div>
-    </div>
-    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2017540"></script>
-    <% } %>
--->
-<!--
-<% if (!index && post.comments && config.disqus_shortname){ %>
-<section id="comments">
-  <div id="disqus_thread"></div>
-    <script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = '<%=config.disqus_shortname%>'; // required: replace example with your forum shortname
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</section>
-<% } %>
--->
 
 <script>
-	var isMobile = {
-        Android: function() {
+    var isMobile = {
+        Android: function () {
             return navigator.userAgent.match(/Android/i);
         },
-        BlackBerry: function() {
+        BlackBerry: function () {
             return navigator.userAgent.match(/BlackBerry/i);
         },
-        iOS: function() {
+        iOS: function () {
             return navigator.userAgent.match(/iPhone|iPad|iPod/i);
         },
-        Opera: function() {
+        Opera: function () {
             return navigator.userAgent.match(/Opera Mini/i);
         },
-        Windows: function() {
+        Windows: function () {
             return navigator.userAgent.match(/IEMobile/i);
         },
-        any: function() {
-            return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+        any: function () {
+            return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() ||
+                isMobile.Windows());
         }
     };
-	if(isMobile.any()){
-	    //移动端不显示目录和评论
-		$("#toc-button").css("display","none");
-		$("#commentDiv").css("display","none");
-	}
-
+    if (isMobile.any()) {
+        //移动端不显示目录和评论
+        $("#toc-button").css("display", "none");
+        $("#commentDiv").css("display", "none");
+    }
 </script>
