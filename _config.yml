@@ -1,11 +1,11 @@
 # Header
 menu:
   #主页: /archives
-  关于我: /resume
   #主页: /
   前端开发: /categories/front
   工作日志: /categories/work
   低吟浅谈: /categories/life
+  关于我: /resume
 
 subnav:
   github: "https://github.com/Kiritor"
@@ -59,7 +59,7 @@ recent: true
 recentContent: 最近打算回归学习,记录一点东西,慢慢找回写博客的习惯...
 
 #是否开启微简历
-resume: true
+resume: false
 
 #是否开启友情链接
 #不开启——
