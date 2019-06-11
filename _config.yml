@@ -56,7 +56,7 @@ toc: true
 
 #是否开启最近通知
 recent: true
-recentContent: 最近打算回归学习,记录一点东西,慢慢找回写博客的习惯...
+recentContent: 🍁砰砰在左边,你在砰砰里...
 
 #是否开启微简历
 resume: false
@@ -77,4 +77,4 @@ friends: false
 #不开启——
 #aboutme: false
 #开启——
-aboutme: 乐于分享,喜欢环境音乐,爱看动漫,偶尔写写技术博客的小程一枚...
+# aboutme: 乐于分享,喜欢环境音乐,爱看动漫,偶尔写写技术博客的小程一枚...
